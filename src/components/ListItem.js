@@ -2,19 +2,16 @@ import React from 'react';
 
 const TodoListItem = props => {
     const onClickClose = () => {
-        console.log('close');
-        var index = parseInt(props.index);
+        const index = parseInt(props.index);
         props.removeItem(index);
     };
 
     const onClickDone = () => {
-        console.log('done');
-        var index = parseInt(props.index);
+        const index = parseInt(props.index);
         props.markTodoDone(index);
     };
 
-    console.log('item', props.item);
-    var todoClass = props.item.done ? 'done' : 'undone';
+    const todoClass = props.item.done ? 'done' : 'undone';
     return (
         <li className="list-group-item ">
             <div className={todoClass}>
