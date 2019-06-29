@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import TodoHeader from './components/Header';
-import TodoList from './components/TodoList';
-import TodoForm from './components/Form';
+import TodoHeader from './components/Header/Header';
+import TodoList from './components/TodoList/TodoList';
+import TodoForm from './components/Form/Form';
 
 class App extends Component {
     state = {
@@ -47,12 +47,12 @@ class App extends Component {
         return (
             <div id="main">
                 <TodoHeader />
+                <TodoForm addItem={this.addItem} />
                 <TodoList
                     items={this.state.todoItems}
                     removeItem={this.removeItem}
                     markTodoDone={this.markTodoDone}
                 />
-                <TodoForm addItem={this.addItem} />
             </div>
         );
     }

@@ -1,40 +1,67 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 
-class TodoForm extends Component {
-    constructor(props) {
-        super(props);
-        this.onSubmit = this.onSubmit.bind(this);
-    }
+const TodoForm = props => {
+    const [name, setName] = useState('');
+    const [error, setError] = useState('');
+    let textInput = null;
+    let form = null;
 
-    componentDidMount() {
-        this.refs.itemName.focus();
-    }
+    useEffect(() => textInput.focus());
 
-    onSubmit(event) {
+    const handleSubmit = event => {
+        console.log('submitted', form);
         event.preventDefault();
-        var newItemValue = this.refs.itemName.value;
 
-        if (newItemValue) {
-            this.props.addItem({ newItemValue });
-            this.refs.form.reset();
+        if (validateForm()) {
+            props.addItem({ newItemValue: name });
+            form.reset();
         }
-    }
+    };
 
-    render() {
-        return (
-            <form ref="form" onSubmit={this.onSubmit} className="form-inline">
-                <input
-                    type="text"
-                    ref="itemName"
-                    className="form-control"
-                    placeholder="add a new todo..."
-                />
-                <button type="submit" className="btn btn-default">
-                    Add
-                </button>
-            </form>
-        );
-    }
-}
+    const handleChange = event => {
+        event.preventDefault();
+        if (validateForm()) {
+            console.log('form valid');
+        } else {
+            console.log('form not valid');
+        }
+    };
+
+    const validateForm = () => {
+        const value = textInput.value;
+        console.log('text', value);
+        setName(value);
+
+        if (!value) {
+            setError('You must enter a name');
+            return false;
+        }
+
+        return true;
+    };
+
+    return (
+        <form
+            ref={f => {
+                form = f;
+            }}
+            onSubmit={handleSubmit}
+            noValidate
+        >
+            <input
+                type="text"
+                ref={input => {
+                    textInput = input;
+                }}
+                placeholder="add a new todo..."
+                onChange={handleChange}
+            />
+            <button type="submit" className="btn btn-default">
+                Add
+            </button>
+            {error && <p className="error">{error}</p>}
+        </form>
+    );
+};
 
 export default TodoForm;
