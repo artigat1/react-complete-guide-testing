@@ -9,31 +9,33 @@ const TodoForm = props => {
     useEffect(() => textInput.focus());
 
     const handleSubmit = event => {
-        console.log('submitted', form);
         event.preventDefault();
 
         if (validateForm()) {
             props.addItem({ newItemValue: name });
             form.reset();
+            setName('');
+            setError('');
         }
     };
 
     const handleChange = event => {
         event.preventDefault();
-        if (validateForm()) {
-            console.log('form valid');
-        } else {
-            console.log('form not valid');
-        }
+        validateForm();
     };
 
     const validateForm = () => {
+        setError('');
         const value = textInput.value;
-        console.log('text', value);
         setName(value);
 
         if (!value) {
             setError('You must enter a name');
+            return false;
+        }
+
+        if (value.length <= 1) {
+            setError('Name should be more than 1 characters');
             return false;
         }
 
@@ -55,6 +57,7 @@ const TodoForm = props => {
                 }}
                 placeholder="add a new todo..."
                 onChange={handleChange}
+                value={name}
             />
             <button type="submit" className="btn btn-default">
                 Add

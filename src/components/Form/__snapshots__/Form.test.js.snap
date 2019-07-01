@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Form /> should render correctly 1`] = `
+<form
+  noValidate={true}
+  onSubmit={[Function]}
+>
+  <input
+    onChange={[Function]}
+    placeholder="add a new todo..."
+    type="text"
+    value=""
+  />
+  <button
+    className="btn btn-default"
+    type="submit"
+  >
+    Add
+  </button>
+  
+</form>
+`;
