@@ -36,7 +36,7 @@ class App extends Component {
 
     markTodoDone(itemIndex) {
         const items = this.state.todoItems;
-        var todo = items[itemIndex];
+        const todo = { ...items[itemIndex] };
         items.splice(itemIndex, 1);
         todo.done = !todo.done;
         todo.done ? items.push(todo) : items.unshift(todo);

@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> should render correctly 1`] = `
+<div
+  id="main"
+>
+  <h1>
+    Todo list
+  </h1>
+  <form
+    noValidate={true}
+    onSubmit={[Function]}
+  >
+    <input
+      onChange={[Function]}
+      placeholder="add a new todo..."
+      type="text"
+      value=""
+    />
+    <button
+      className="btn btn-default"
+      type="submit"
+    >
+      Add
+    </button>
+    
+  </form>
+  <ul
+    className="list-group"
+  >
+     
+    <li
+      className="list-group-item "
+    >
+      <div
+        className="undone"
+      >
+        <button
+          className="close"
+          onClick={[Function]}
+          type="button"
+        >
+          ×
+        </button>
+         
+        <span
+          aria-hidden="true"
+          className="glyphicon glyphicon-ok icon"
+          onClick={[Function]}
+        >
+          learn react
+        </span>
+      </div>
+    </li>
+    <li
+      className="list-group-item "
+    >
+      <div
+        className="done"
+      >
+        <button
+          className="close"
+          onClick={[Function]}
+          type="button"
+        >
+          ×
+        </button>
+         
+        <span
+          aria-hidden="true"
+          className="glyphicon glyphicon-ok icon"
+          onClick={[Function]}
+        >
+          Go shopping
+        </span>
+      </div>
+    </li>
+    <li
+      className="list-group-item "
+    >
+      <div
+        className="done"
+      >
+        <button
+          className="close"
+          onClick={[Function]}
+          type="button"
+        >
+          ×
+        </button>
+         
+        <span
+          aria-hidden="true"
+          className="glyphicon glyphicon-ok icon"
+          onClick={[Function]}
+        >
+          buy flowers
+        </span>
+      </div>
+    </li>
+     
+  </ul>
+</div>
+`;

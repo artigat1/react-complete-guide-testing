@@ -3,7 +3,7 @@ import React from 'react';
 import TodoListItem from '../ListItem/ListItem';
 
 const List = props => {
-    var items = props.items.map((item, index) => {
+    const items = props.items.map((item, index) => {
         return (
             <TodoListItem
                 key={index}
