@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ListItem> should render correctly 1`] = `
+<li
+  className="list-group-item "
+>
+  <div
+    className="undone"
+  >
+    <button
+      className="close"
+      onClick={[Function]}
+      type="button"
+    >
+      ×
+    </button>
+     
+    <span
+      aria-hidden="true"
+      className="glyphicon glyphicon-ok icon"
+      onClick={[Function]}
+    >
+      learn react
+    </span>
+  </div>
+</li>
+`;

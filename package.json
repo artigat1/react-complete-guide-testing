@@ -32,13 +32,14 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react": "^8.0.4",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "jest": "^24.7.1",
     "react-test-renderer": "^16.8.6"
   },
   "husky": {
-      "hooks": {
+    "hooks": {
       "pre-commit": "lint-staged"
     }
   },
